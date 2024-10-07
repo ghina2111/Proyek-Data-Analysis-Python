@@ -2,8 +2,7 @@ import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# Contoh membaca dari CSV
-air1_df = pd.read_csv("https://raw.githubusercontent.com/marceloreis/HTI/refs/heads/master/PRSA_Data_20130301-20170228/PRSA_Data_Aotizhongxin_20130301-20170228.csv")  # Ganti dengan nama file Anda
+air1_df = pd.read_csv("https://raw.githubusercontent.com/marceloreis/HTI/refs/heads/master/PRSA_Data_20130301-20170228/PRSA_Data_Aotizhongxin_20130301-20170228.csv") 
 air2_df = pd.read_csv("https://raw.githubusercontent.com/marceloreis/HTI/refs/heads/master/PRSA_Data_20130301-20170228/PRSA_Data_Changping_20130301-20170228.csv")
 air3_df = pd.read_csv("https://raw.githubusercontent.com/marceloreis/HTI/refs/heads/master/PRSA_Data_20130301-20170228/PRSA_Data_Dingling_20130301-20170228.csv")
 air4_df = pd.read_csv("https://raw.githubusercontent.com/marceloreis/HTI/refs/heads/master/PRSA_Data_20130301-20170228/PRSA_Data_Dongsi_20130301-20170228.csv")
@@ -16,10 +15,7 @@ air10_df = pd.read_csv("https://raw.githubusercontent.com/marceloreis/HTI/refs/h
 air11_df = pd.read_csv("https://raw.githubusercontent.com/marceloreis/HTI/refs/heads/master/PRSA_Data_20130301-20170228/PRSA_Data_Wanliu_20130301-20170228.csv")
 air12_df = pd.read_csv("https://raw.githubusercontent.com/marceloreis/HTI/refs/heads/master/PRSA_Data_20130301-20170228/PRSA_Data_Wanshouxigong_20130301-20170228.csv")
 
-# Fungsi untuk memuat dan memproses data
 def load_and_process_data():
-    # Mengganti ini dengan proses loading DataFrame Anda
-    # Contoh: air1_df, air2_df, ..., air12_df adalah DataFrame yang sudah ada
     df_all = pd.concat([air1_df, air2_df, air3_df, air4_df, air5_df, air6_df, 
                         air7_df, air8_df, air9_df, air10_df, air11_df, air12_df])
     df_all['date_time'] = pd.to_datetime(df_all[['year', 'month', 'day', 'hour']])
@@ -73,11 +69,8 @@ def question_2(df_all):
 # Main function to run the Streamlit app
 def main():
     st.title("Dashboard Kualitas Udara")
+        df_all = load_and_process_data()
     
-    # Load data
-    df_all = load_and_process_data()
-    
-    # Display questions
     question_1(df_all)
     question_2(df_all)
 
