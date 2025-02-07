@@ -42,6 +42,8 @@ def question_1(df_all):
     ax.set_title('Persentase Kualitas Udara Buruk di Top 5 Kota pada Tahun 2017 (Berdasarkan PM2.5 + PM10)')
     st.pyplot(fig)
 
+print('\n \n 5 kota dengan kualitas udara terburuk sepanjang tahun 2017 yaitu Dongsi,Wanshouxigong, Gucheng, Tiantan, Nongzhanguan')
+
 # Fungsi untuk pertanyaan 2
 def question_2(df_all):
     st.header("Apakah ada periode atau bulan tertentu dalam setahun di mana kualitas udara lebih buruk?")
@@ -66,6 +68,7 @@ def question_2(df_all):
     ax.grid(True)
     st.pyplot(fig)
 
+print('\n \n Ada periode (waktu) tertentu dimana kualitas udara semakin memburuk sepanjang tahun yaitu September - November.')
 # Main function to run the Streamlit app
 def main():
     st.title("Dashboard Kualitas Udara")
