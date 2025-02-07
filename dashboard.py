@@ -69,7 +69,7 @@ def question_2(df_all):
 # Main function to run the Streamlit app
 def main():
     st.title("Dashboard Kualitas Udara")
-        df_all = load_and_process_data()
+    df_all = load_and_process_data()
     
     question_1(df_all)
     question_2(df_all)
